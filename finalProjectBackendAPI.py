@@ -40,7 +40,6 @@ def addCap():
 
     #variables to hold the new data that is going to be inserted into the table
     request_data = request.get_json()
-    newid = request_data['id']
     newFname = request_data['firstname']
     newLname = request_data['lastname']
     newCapank = request_data['caprank']
@@ -48,7 +47,7 @@ def addCap():
 
     conn = create_connection(creds.host, creds.user, creds.password, creds.dbname)
     # SQL statement to insert the values into the table
-    sql = "insert into captain(id, firstname, lastname, caprank, homeplanet) values ('%s', '%s', '%s', '%s', '%s')" % (newid, newFname, newLname, newCapank, newHomeplanet)
+    sql = "insert into captain(firstname, lastname, caprank, homeplanet) values ('%s', '%s', '%s', '%s')" % (newFname, newLname, newCapank, newHomeplanet)
     
     #executing the qeury to add an entry into the table
     execute_query(conn, sql)

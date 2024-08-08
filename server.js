@@ -57,6 +57,26 @@ app.get('/captains', function(req, res) {
     })
 });
 
+app.post('/addCaptain', function(req, res) {
+    addCaptain = req.body
+    console.log(addCaptain)
+    captain = {
+        'firstname': addCaptain.addfirstname,
+        'lastname': addCaptain.addlastname,
+        'caprank': addCaptain.addrank,
+        'homeplanet': addCaptain.addhomeplanet
+    }
+
+    axios.post('/api/captain/add', captain)
+    .then(function(response) {
+        axios.get('/api/captain/all')
+        .then((response)=>{
+            const captain = response.data;
+            res.render('captains.ejs', { captain });
+        })
+    });
+});
+
 // Spaceships
 app.get('/spaceships', function(req, res) {
     axios.get('/api/spaceship/all')
