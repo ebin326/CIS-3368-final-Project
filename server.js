@@ -21,6 +21,12 @@ const headers = {
 
 // Dashboard
 app.get('/', function(req, res) {
+    res.render('login.ejs', {
+    });
+});
+
+// Dashboard
+app.get('/dashboard', function(req, res) {
     res.render('dashboard.ejs', {
     });
 });
