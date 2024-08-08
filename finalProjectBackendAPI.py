@@ -9,7 +9,7 @@ creds = Creds()  # Creates an instance of the Creds class
 # Login page
 @app.route('/')
 def main_page():
-    return render_template('login.html')
+    return render_template('login.ejs')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -20,13 +20,13 @@ def login():
         # Check if the username and password are correct
         if username == creds.userLog and password == creds.userPass:
             # Redirect to a dashboard page upon successful login
-            return redirect(url_for('dashboard'))
+            return 'NICE UR IN'
         else:
             # Display an error message for invalid credentials
             return 'Invalid username or password. Please try again.'
 
     # Render the login form template for GET requests
-    return render_template('login.html')
+    return render_template('login.ejs')
 
 # read captain(s)
 @app.route('/api/captain/all', methods=['GET'])
