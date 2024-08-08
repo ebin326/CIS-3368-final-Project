@@ -41,7 +41,11 @@ app.post('/login', function(req, res) {
 
 // Dashboard
 app.get('/dashboard', function(req, res) {
-    res.render('dashboard.ejs', {});
+    axios.get('/api/captain/all')
+    .then((response)=>{
+        const captain = response.data;
+        res.render('dashboard.ejs', { captain });
+    })
 });
 
 // Captains

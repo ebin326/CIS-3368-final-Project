@@ -16,6 +16,12 @@
         <div class="container">
             <h2 style="text-align: center">Manage Spaceships</h2>
 
+            <h3>Spaceship List</h3>
+            <ul>
+                <% ship.forEach(function(item) { %>
+                    <li>ID: <%= item.id %> Max Weight: <%= item.maxweight %> Captain ID: <%= item.captainid %></li>
+                <% }); %>
+            </ul>
             <!-- Update Spaceship Form -->
             <h3 style="text-align: center">Update Existing Spaceship</h3>
             <form action="/updateSpaceship" method="POST">

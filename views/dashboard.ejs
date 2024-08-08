@@ -39,7 +39,12 @@
     </div>
     <div class="content">
         <h1>Welcome to the Dashboard</h1>
-        <p>This is your dashboard content. You can add charts, tables, and other elements here.</p>
+        <h2>Captain List</h2>
+        <ul>
+            <% captain.forEach(function(item) { %>
+                <li>ID: <%= item.id %> First Name: <%= item.firstname %> Last Name: <%= item.lastname %> Rank: <%= item.rank %> Homeplanet: <%= item.homeplanet %></li>
+            <% }); %>
+        </ul>
     </div>
 </body>
 </html>
