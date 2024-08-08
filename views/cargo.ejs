@@ -12,7 +12,7 @@
         <h3>Cargo List</h3>
         <ul>
             <% cargo.forEach(function(item) { %>
-                <li>ID: <%= item.id %> Weight: <%= item.weight %> Type: <%= item.cargotype %> Departure: <%= item.departure %> Arrival: <%= item.arrival %> Ship ID: <%= item.shipid %></li>
+                <li>ID: "<%= item.id %>" Weight: "<%= item.weight %>" Type: "<%= item.cargotype %>" Departure: "<%= item.departure %>" Arrival: "<%= item.arrival %>" Ship ID: "<%= item.shipid %>"</li>
             <% }); %>
         </ul>
         <h3 style="text-align: center;">Add New Cargo</h3>

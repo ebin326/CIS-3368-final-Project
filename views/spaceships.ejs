@@ -19,7 +19,7 @@
             <h3>Spaceship List</h3>
             <ul>
                 <% ship.forEach(function(item) { %>
-                    <li>ID: <%= item.id %> Max Weight: <%= item.maxweight %> Captain ID: <%= item.captainid %></li>
+                    <li>ID: "<%= item.id %>" Max Weight: "<%= item.maxweight %>" Captain ID: "<%= item.captainid %>"</li>
                 <% }); %>
             </ul>
             <!-- Update Spaceship Form -->
