@@ -18,7 +18,7 @@ def login():
         password = request.form['password']
 
         # Check if the username and password are correct
-        if username == 'admin' and password == 'password':
+        if username == creds.userLog and password == creds.userPass:
             # Redirect to a dashboard page upon successful login
             return redirect(url_for('dashboard'))
         else:
