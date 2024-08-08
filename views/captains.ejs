@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captain Management</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Captain Management</h1>
+    </header>
+    
+    <main class="container my-5">
+        <!-- Add New Captain -->
+        <section class="mb-5">
+            <h3 class="text-center mb-4">Add New Captain</h3>
+            <form action="/addCaptain" method="POST">
+                <div class="form-group">
+                    <label for="addfirstname">First Name</label>
+                    <input type="text" id="addfirstname" name="addfirstname" class="form-control" placeholder="First Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="addlastname">Last Name</label>
+                    <input type="text" id="addlastname" name="addlastname" class="form-control" placeholder="Last Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="addrank">Rank</label>
+                    <input type="text" id="addrank" name="addrank" class="form-control" placeholder="Rank" required>
+                </div>
+                <div class="form-group">
+                    <label for="addhomeplanet">Home Planet</label>
+                    <input type="text" id="addhomeplanet" name="addhomeplanet" class="form-control" placeholder="Home Planet" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Add Captain</button>
+            </form>
+        </section>
+        
+        <hr>
+        
+        <!-- Update Existing Captain -->
+        <section class="mb-5">
+            <h3 class="text-center mb-4">Update Existing Captain</h3>
+            <form action="/updCaptain" method="POST">
+                <div class="form-group">
+                    <label for="id">Captain ID</label>
+                    <input type="number" id="id" name="id" class="form-control" placeholder="Captain ID" required>
+                </div>
+                <div class="form-group">
+                    <label for="newrank">New Captain Rank</label>
+                    <input type="text" id="newrank" name="newrank" class="form-control" placeholder="New Captain Rank" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Update Captain</button>
+            </form>
+        </section>
+        
+        <hr>
+        
+        <!-- Delete Existing Captain -->
+        <section class="mb-5">
+            <h3 class="text-center mb-4">Delete Existing Captain</h3>
+            <form action="/delCaptain" method="POST">
+                <div class="form-group">
+                    <label for="delID">Captain ID</label>
+                    <input type="number" id="delID" name="delID" class="form-control" placeholder="Captain ID" required>
+                </div>
+                <button type="submit" class="btn btn-danger btn-block">Delete Captain</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

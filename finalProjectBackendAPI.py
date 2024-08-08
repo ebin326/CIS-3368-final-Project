@@ -6,27 +6,19 @@ app = Flask(__name__)
 
 creds = Creds()  # Creates an instance of the Creds class
 
-# Login page
-@app.route('/')
-def main_page():
-    return render_template('login.ejs')
-
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login', methods=['POST'])
 def login():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
+    request_data = request.get_json()
+    username = request_data['username']
+    password = request_data['password']
 
-        # Check if the username and password are correct
-        if username == creds.userLog and password == creds.userPass:
-            # Redirect to a dashboard page upon successful login
-            return 'NICE UR IN'
-        else:
-            # Display an error message for invalid credentials
-            return 'Invalid username or password. Please try again.'
-
-    # Render the login form template for GET requests
-    return render_template('login.ejs')
+    # Check if the username and password are correct
+    if username == creds.userLog and password == creds.userPass:
+        # Redirect to a dashboard page upon successful login
+        return 'NICE UR IN'
+    else:
+        # Display an error message for invalid credentials
+        return 'Invalid username or password. Please try again.'
 
 # read captain(s)
 @app.route('/api/captain/all', methods=['GET'])

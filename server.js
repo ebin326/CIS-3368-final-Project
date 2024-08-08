@@ -19,9 +19,23 @@ const headers = {
     'content-type': 'application/json'
 }
 
-// Dashboard
+// login homepage
 app.get('/', function(req, res) {
-    res.render('login.ejs', {
+    res.render('login.ejs', {});
+});
+
+// authentication api
+app.post('/login', function(req, res) {
+    const username = req.body.username;
+    const password = req.body.password;
+
+    axios.post('/login', {username, password})
+    .then(function(response) {
+        res.render('dashboard.ejs', {});
+    })
+    .catch(function(error) {
+        console.error(error);
+        res.status(500).send('Error logging in');
     });
 });
 
