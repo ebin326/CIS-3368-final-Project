@@ -31,18 +31,32 @@ app.post('/login', function(req, res) {
 
     axios.post('/login', {username, password})
     .then(function(response) {
-        res.render('dashboard.ejs', {});
+        res.redirect('/dashboard');
     })
     .catch(function(error) {
         console.error(error);
-        res.status(500).send('Error logging in');
+        res.status(500 ).send('Error logging in');
     });
 });
 
 // Dashboard
 app.get('/dashboard', function(req, res) {
-    res.render('dashboard.ejs', {
-    });
+    res.render('dashboard.ejs', {});
+});
+
+// Captains
+app.get('/captains', function(req, res) {
+    res.render('captains.ejs', {});
+});
+
+// Spaceships
+app.get('/spaceships', function(req, res) {
+    res.render('spaceships.ejs', {});
+});
+
+// Cargo
+app.get('/cargo', function(req, res) {
+    res.render('cargo.ejs', {});
 });
 
 app.listen(8000);
