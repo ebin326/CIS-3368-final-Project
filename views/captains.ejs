@@ -14,6 +14,11 @@
     <main class="container my-5">
         <!-- Add New Captain -->
         <section class="mb-5">
+            <ul>
+                <% captain.forEach(function(item) { %>
+                    <li>ID: <%= item.id %> First Name: <%= item.firstname %> Last Name: <%= item.lastname %> Rank: <%= item.rank %> Homeplanet: <%= item.homeplanet %></li>
+                <% }); %>
+            </ul>
             <h3 class="text-center mb-4">Add New Captain</h3>
             <form action="/addCaptain" method="POST">
                 <div class="form-group">

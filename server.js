@@ -50,17 +50,29 @@ app.get('/dashboard', function(req, res) {
 
 // Captains
 app.get('/captains', function(req, res) {
-    res.render('captains.ejs', {});
+    axios.get('/api/captain/all')
+    .then((response)=>{
+        const captain = response.data;
+        res.render('captains.ejs', { captain });
+    })
 });
 
 // Spaceships
 app.get('/spaceships', function(req, res) {
-    res.render('spaceships.ejs', {});
+    axios.get('/api/spaceship/all')
+    .then((response)=>{
+        const ship = response.data;
+        res.render('spaceships.ejs', { ship });
+    })
 });
 
 // Cargo
 app.get('/cargo', function(req, res) {
-    res.render('cargo.ejs', {});
+    axios.get('/api/captain/all')
+    .then((response)=>{
+        const cargo = response.data;
+        res.render('cargo.ejs', { cargo });
+    })
 });
 
 app.listen(8000);
